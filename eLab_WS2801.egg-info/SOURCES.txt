@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+eLab_WS2801.egg-info/PKG-INFO
+eLab_WS2801.egg-info/SOURCES.txt
+eLab_WS2801.egg-info/dependency_links.txt
+eLab_WS2801.egg-info/entry_points.txt
+eLab_WS2801.egg-info/not-zip-safe
+eLab_WS2801.egg-info/requires.txt
+eLab_WS2801.egg-info/top_level.txt
+octoprint_eLab_WS2801/__init__.py

@@ -1,0 +1,3 @@
+[octoprint.plugin]
+eLab_WS2801 = octoprint_eLab_WS2801
+

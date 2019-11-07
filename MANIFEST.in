@@ -1,0 +1,4 @@
+include README.md
+recursive-include eLab/templates *
+recursive-include eLab/translations *
+recursive-include eLab/static *
