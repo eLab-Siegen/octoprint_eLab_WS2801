@@ -14,7 +14,7 @@ import Adafruit_WS2801
 import Adafruit_GPIO.SPI as SPI
 
 # Configure the count of pixels:
-PIXEL_COUNT = 5
+PIXEL_COUNT = 64
 
 # Alternatively specify a hardware SPI connection on /dev/spidev0.0:
 SPI_PORT   = 0
