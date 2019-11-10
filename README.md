@@ -1,6 +1,6 @@
 # eLab_WS2801
 
-Printer Status Messages via WS2081 RGB-LEDs
+Printer Status Messages via WS2081 RGB-LEDs for Octoprint
 
 ## Setup
 
