@@ -1,6 +1,6 @@
 # eLab_WS2801
 
-Printer Status Messages via WS2081 RGB-LEDs for Octoprint
+Printer Status Messages via WS2081 RGB-LEDs for Octoprint on Raspberry-Pi.
 
 ## Setup
 
