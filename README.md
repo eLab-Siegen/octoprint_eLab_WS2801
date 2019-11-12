@@ -11,7 +11,7 @@ or manually using this URL:
 
 ## Wiring
 | WS2801          | Rasperry Pi   |
-| -------------   |:-------------:|
+| -------------   |---------------|
 | Clock (CK / CL) | Pin 23        |
 | Data (SI / DI)  | Pin 19        |
 | Ground (GND)    | Pin 6         |
