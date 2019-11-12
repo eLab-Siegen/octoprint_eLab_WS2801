@@ -9,6 +9,13 @@ or manually using this URL:
 
     https://github.com/eLab-Siegen/octoprint_eLab_WS2801/archive/master.zip
 
+## Wiring
+| WS2801          | Rasperry Pi   |
+| -------------   |:-------------:|
+| Clock (CK / CL) | Pin 23        |
+| Data (SI / DI)  | Pin 19        |
+| Ground (GND)    | Pin 6         |
+      
 
 ## Configuration
 
