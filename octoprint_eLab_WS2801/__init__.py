@@ -22,7 +22,7 @@ SPI_DEVICE = 0
 pixels = Adafruit_WS2801.WS2801Pixels(PIXEL_COUNT, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE), gpio=GPIO)
 
 
-class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin):
+class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin, octoprint.plugin.ProgressPlugin):
 
     event_switch = {
 	"Startup": [73, 245, 228],
@@ -53,12 +53,20 @@ class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin):
 
 
     def on_event(self, event, payload):
-	if event in self.event_switch:
-	    rgb = self.event_switch[event]
+	    if event in self.event_switch:
+	        rgb = self.event_switch[event]
             self.ws2801_all(rgb[0], rgb[1], rgb[2])
 
-	if event == "ToolChange":
-	    t = Thread(target=self.toolchange, args=())
-	    t.start()
+	    if event == "ToolChange":
+	        t = Thread(target=self.toolchange, args=())
+	        t.start()
+
+    def  on_print_progress(self, storage, path, progress)
+        for x in range(20):
+            pixels.set_pixel(x, Adafruit_WS2801.RGB_to_color( 255, 255, 255 ))
+        pixels.set_pixel((progress/5), Adafruit_WS2801.RGB_to_color( 0, 255, 0 ))
+        pixels.show()
+    
+    
 
 __plugin_implementation__ = eLab_WS2801_Plugin()
