@@ -15,7 +15,7 @@ import Adafruit_GPIO.SPI as SPI
 
 # Configure the count of pixels:
 PIXEL_COUNT = 64
-PROGRESSBAR = 15
+PROGRESSBAR = 10
 
 # Alternatively specify a hardware SPI connection on /dev/spidev0.0:
 SPI_PORT   = 0
@@ -66,7 +66,10 @@ class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin, octoprint.plugin.P
     def  on_print_progress(self, storage, path, progress):
         for x in range(PROGRESSBAR):
             pixels.set_pixel(x, Adafruit_WS2801.RGB_to_color( 0, 0, 255 ))
-        pixels.set_pixel((PROGRESSBAR - (progress * PROGRESSBAR / 100)), Adafruit_WS2801.RGB_to_color( 0, 255, 0 ))
+        pixels.set_pixel((PROGRESSBAR - 1 - (progress * PROGRESSBAR / 100)), Adafruit_WS2801.RGB_to_color( 0, 255, 0 ))
+        if progress == 100
+            for x in range(PROGRESSBAR):
+            pixels.set_pixel(x, Adafruit_WS2801.RGB_to_color( 255, 0, 0 ))
         pixels.show()
     
     
