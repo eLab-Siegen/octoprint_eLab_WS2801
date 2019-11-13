@@ -50,12 +50,12 @@ class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin, octoprint.plugin.P
         self.ws2801_all(255, 145, 0)
         time.sleep(30)
         self.ws2801_all(255, 255, 255)
-	_stop()
+        _stop()
 
 
     def on_event(self, event, payload):
-	    if event in self.event_switch:
-	        rgb = self.event_switch[event]
+        if event in self.event_switch:
+            rgb = self.event_switch[event]
             self.ws2801_all(rgb[0], rgb[1], rgb[2])
 
 	    if event == "ToolChange":
