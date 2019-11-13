@@ -7,7 +7,7 @@ Printer Status Messages via WS2081 RGB-LEDs for Octoprint on Raspberry-Pi.
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
 or manually using this URL:
 
-    https://github.com/eLab-Siegen/octoprint_eLab_WS2801/archive/master.zip
+    https://github.com/eLab-Siegen/octoprint_eLab_WS2801/archive/experimental.zip
 
 ## Wiring
 | WS2801          | Rasperry Pi   |
