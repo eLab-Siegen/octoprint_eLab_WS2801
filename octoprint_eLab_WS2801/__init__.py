@@ -68,8 +68,8 @@ class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin, octoprint.plugin.P
             pixels.set_pixel(x, Adafruit_WS2801.RGB_to_color( 0, 0, 255 ))
         pixels.set_pixel((PROGRESSBAR - 1 - (progress * PROGRESSBAR / 100)), Adafruit_WS2801.RGB_to_color( 0, 255, 0 ))
         if progress == 100:
-            for x in range(PROGRESSBAR):
-            pixels.set_pixel(x, Adafruit_WS2801.RGB_to_color( 255, 0, 0 ))
+            for y in range(PROGRESSBAR):
+            pixels.set_pixel(y, Adafruit_WS2801.RGB_to_color( 255, 0, 0 ))
         pixels.show()
     
     
