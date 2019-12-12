@@ -15,7 +15,7 @@ import Adafruit_GPIO.SPI as SPI
 
 # Configure the count of pixels:
 PIXEL_COUNT = 64
-PROGRESSBAR = 10
+PROGRESSBAR = 16
 
 # Alternatively specify a hardware SPI connection on /dev/spidev0.0:
 SPI_PORT   = 0
