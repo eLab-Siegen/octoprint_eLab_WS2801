@@ -15,7 +15,7 @@ import Adafruit_GPIO.SPI as SPI
 
 # Configure the count of pixels:
 PIXEL_COUNT = 64
-PROGRESSBAR = 16
+PROGRESSBAR = 18
 
 # Alternatively specify a hardware SPI connection on /dev/spidev0.0:
 SPI_PORT   = 0
@@ -28,8 +28,6 @@ class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin, octoprint.plugin.P
     event_switch = {
 	"Startup": [73, 245, 228],
 	"Shutdown": [0, 0, 0],
-	"ClientOpened": [0, 255, 145],
-	"ClientClosed": [73, 245, 228],
 	"Connected": [0, 255, 26],
 	"Disconnected": [255, 0, 242],
 	"Error": [255, 0, 0],
