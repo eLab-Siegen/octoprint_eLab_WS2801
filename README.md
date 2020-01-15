@@ -4,6 +4,8 @@ Printer Status Messages via WS2081 RGB-LEDs for Octoprint on Raspberry-Pi.
 
 ## Setup
 
+Important: SPI Interface must be activated. Use "sudo raspi-config" to activate.
+
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
 or manually using this URL:
 
