@@ -33,7 +33,7 @@ plugin_url = "https://github.com/eLab-Siegen/octoprint_eLab_WS2801"
 plugin_license = "AGPLv3"
 
 # Any additional requirements besides OctoPrint should be listed here
-plugin_requires = ["adafruit-circuitpython-ws2801", "RPi.GPIO"]
+plugin_requires = ["adafruit-ws2801", "RPi.GPIO"]
 
 ### --------------------------------------------------------------------------------------------------------------------
 ### More advanced options that you usually shouldn't have to touch follow after this point
