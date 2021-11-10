@@ -5,6 +5,8 @@ import octoprint.plugin
 
 from threading import Thread
 
+__plugin_pythoncompat__ = ">=3,<4"
+
 # Simple demo of of the WS2801/SPI-like addressable RGB LED lights.
 import time
 import RPi.GPIO as GPIO
