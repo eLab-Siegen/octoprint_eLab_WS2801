@@ -39,6 +39,8 @@ class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin):
 	"PrintCancelled": [255, 255, 0]
     }
 
+	t = Thread(target=self.toolchange, args=())
+
     def ws2801_all(self, r, g, b):
         pixels.clear()
         for x in range(PIXEL_COUNT):
@@ -50,17 +52,16 @@ class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin):
         self.ws2801_all(255, 145, 0)
         time.sleep(30)
         self.ws2801_all(255, 255, 255)
-	_stop()
+	    t.stop()
 
 
     def on_event(self, event, payload):
-	if event in self.event_switch:
-	    rgb = self.event_switch[event]
+	    if event in self.event_switch:
+	        rgb = self.event_switch[event]
             self.ws2801_all(rgb[0], rgb[1], rgb[2])
 
-	if event == "ToolChange":
-	    t = Thread(target=self.toolchange, args=())
-	    t.start()
+	    if event == "ToolChange":
+	        t.start()
 		
     def  on_print_progress(self, storage, path, progress):
         for x in range(PROGRESSBAR):
