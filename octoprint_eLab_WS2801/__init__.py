@@ -13,6 +13,8 @@ import RPi.GPIO as GPIO
 import Adafruit_WS2801
 import Adafruit_GPIO.SPI as SPI
 
+__plugin_pythoncompat__ = ">=2.7,<4"
+
 # Configure the count of pixels:
 PIXEL_COUNT = 64
 PROGRESSBAR = 18
