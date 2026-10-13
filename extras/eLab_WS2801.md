@@ -57,8 +57,8 @@ compatibility:
   # You can also remove the whole "octoprint" block. Removing it will default to all
   # OctoPrint versions being supported.
 
-  #octoprint:
-  #- 1.2.0
+  octoprint:
+  - 1.2.0
 
   # List of compatible operating systems
   #
@@ -83,6 +83,18 @@ compatibility:
   - macos
   - freebsd
 
+  # Compatible Python version
+  #
+  # Plugins should aim for compatibility for Python 2 and 3 for now, in which case the value should be ">=2.7,<4".
+  #
+  # Plugins that only wish to support Python 3 should set it to ">=3,<4".
+  #
+  # If your plugin only supports Python 2 it will no longer be accepted on the plugin repository.
+  #
+  # Uncomment the appropriate setting
+    
+  #python: ">=2.7,<3" # Python 2 & 3
+  python: ">=3,<4" # Python 3 only
 ---
 
 **TODO**: Longer description of your plugin, configuration examples etc. This part will be visible on the page at
