@@ -26,20 +26,18 @@ pixels = Adafruit_WS2801.WS2801Pixels(PIXEL_COUNT, spi=SPI.SpiDev(SPI_PORT, SPI_
 class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin):
 
     event_switch = {
-	"Startup": [73, 245, 228],
-	"Shutdown": [0, 0, 0],
-	"ClientOpened": [0, 255, 145],
-	"ClientClosed": [73, 245, 228],
-	"Connected": [0, 255, 26],
-	"Disconnected": [255, 0, 242],
-	"Error": [255, 0, 0],
-	"PrintStarted": [255, 255, 255],
-	"PrintFailed": [199, 4, 49],
-	"PrintDone": [0, 255, 0],
-	"PrintCancelled": [255, 255, 0]
+        "Startup": [73, 245, 228],
+        "Shutdown": [0, 0, 0],
+        "ClientOpened": [0, 255, 145],
+        "ClientClosed": [73, 245, 228],
+        "Connected": [0, 255, 26],
+        "Disconnected": [255, 0, 242],
+        "Error": [255, 0, 0],
+        "PrintStarted": [255, 255, 255],
+        "PrintFailed": [199, 4, 49],
+        "PrintDone": [0, 255, 0],
+        "PrintCancelled": [255, 255, 0]
     }
-
-	t = Thread(target=self.toolchange, args=())
 
     def ws2801_all(self, r, g, b):
         pixels.clear()
@@ -52,17 +50,19 @@ class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin):
         self.ws2801_all(255, 145, 0)
         time.sleep(30)
         self.ws2801_all(255, 255, 255)
-	    t.stop()
+        
+        self.t = Thread(target=self.toolchange, args=())
+        self.t.stop()
 
 
     def on_event(self, event, payload):
-	    if event in self.event_switch:
-	        rgb = self.event_switch[event]
+        if event in self.event_switch:
+            rgb = self.event_switch[event]
             self.ws2801_all(rgb[0], rgb[1], rgb[2])
 
-	    if event == "ToolChange":
-	        t.start()
-		
+        if event == "ToolChange":
+            self.t.start()
+
     def  on_print_progress(self, storage, path, progress):
         for x in range(PROGRESSBAR):
             pixels.set_pixel(x, Adafruit_WS2801.RGB_to_color( 0, 0, 255 ))
@@ -72,5 +72,4 @@ class eLab_WS2801_Plugin(octoprint.plugin.EventHandlerPlugin):
                 pixels.set_pixel(y, Adafruit_WS2801.RGB_to_color( 255, 0, 0 ))
         pixels.show()
 
-	
 __plugin_implementation__ = eLab_WS2801_Plugin()
